@@ -1,14 +1,33 @@
 ![image](https://github.com/Mozgiii9/WardenProtocolSetupTheNode/assets/74683169/373a9e96-8740-4e14-8283-3c9a19041bd9)
 
+## Дата создания файла: 15.05.2024
+
 ## Обзор проекта Warden Protocol:
 
 **Warden Protocol - проект, созданный на основе Cosmos SDK, который обеспечивает различные уровни выполнения для обеспечения совместимости, модульного управления ключами (этакие инструменты для возможности выбора MPS и HSM операторов) и агрегации учетных записей.**
 
+**Информационные ресурсы проекта:**
+
+**- Web-site: [клик](https://wardenprotocol.org/);**
+
+**- Discord: [клик](https://discord.com/invite/wardenprotocol);**
+
+**- Twitter: [клик](https://twitter.com/wardenprotocol);**
+
+**- Telegram: [клик](https://t.me/wardenprotocol);**
+
+**- Кран: [клик](https://spaceward.alfama.wardenprotocol.org/);**
+
+**- Эксплорер: [клик](https://testnet.itrocket.net/warden/staking)**
+
 **Требования к серверу:**
 
 **- CPU: 4 ядра;**
+
 **- RAM: 8GB;**
+
 **- Storage: 200GB SSD(NVME);**
+
 **- OS: Ubuntu 20.04**
 
 ## Инструкция по установке ноды Warden Protocol:
