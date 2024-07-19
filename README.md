@@ -132,32 +132,43 @@ wardend query bank balances $WALLET_ADDRESS
 
 **9. Создадим валидатора:**
 
-```
-cd $HOME
-```
+**Получаем свой PubKey:**
 
 ```
-echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(wardend comet show-validator | grep -Po '\"key\":\s*\"\K[^"]*')\"},
-    \"amount\": \"1000000uward\",
-    \"moniker\": \"test\",
-    \"identity\": \"\",
-    \"website\": \"\",
-    \"security\": \"\",
-    \"details\": \"I love blockchain \",
-    \"commission-rate\": \"0.1\",
-    \"commission-max-rate\": \"0.2\",
-    \"commission-max-change-rate\": \"0.01\",
-    \"min-self-delegation\": \"1\"
-}" > validator.json
+wardend comet show-validator
 ```
 
-**В поле "moniker" замените слово "test" на имя Вашего валидатора**
+**Далее создаем validator.json:**
 
 ```
-wardend tx staking create-validator validator.json \
-    --from $WALLET \
-    --chain-id buenavista-1 \
-	--gas auto --gas-adjustment 1.5 --fees 600uward \
+nano $HOME/.warden/validator.json
+```
+
+**В редакторе вставьте следующие значения. PUBKEY и NODE замените на Ваш PubKey из прошлой команды и имя ноды соответственно, кавычки оставьте:**
+
+```
+{
+  "pubkey": "PUBKEY",
+  "amount": "1000000uward",
+  "moniker": "NODE",
+  "identity": "",
+  "website": "",
+  "security": "",
+  "details": "",
+  "commission-rate": "0.05",
+  "commission-max-rate": "0.5",
+  "commission-max-change-rate": "0.5",
+  "min-self-delegation": "1"
+}
+```
+
+**Отправьте транзакцию:**
+
+```
+wardend tx staking create-validator $HOME/.warden/validator.json \
+    --from=$WALLET \
+    --chain-id=buenavista-1 \
+    --fees=500uward
 ```
 
 **10. Проверим статус валидатора:**
